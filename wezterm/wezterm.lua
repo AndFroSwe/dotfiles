@@ -19,19 +19,20 @@ config.font_size = 11
 -- Choose terminal
 -- pwsh on windows
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	-- Note: On windows, special settings are needed:
+	-- 1. Enable Accessibility > Visual Effects > Transparency effects
+	-- 2. Get correct settings from https://github.com/wezterm/wezterm/issues/4145
 	config.default_prog = { "pwsh", "-nologo" }
 	config.window_background_opacity = 0
-	config.win32_system_backdrop = "Acrylic"
+	config.win32_system_backdrop = "Tabbed"
 else
 	config.window_background_opacity = 0.85
-	config.macos_window_background_blur = 10
+	config.macos_window_background_blur = 30
 end
 
 -- Window setting/ appearance
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = true
-config.window_background_opacity = 0.85
-config.macos_window_background_blur = 30
 
 -- Key binds
 -- Emulate tmux
