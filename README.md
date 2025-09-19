@@ -1,3 +1,3 @@
-# Dotfiles for Oh-My-Posh
+# Dotfiles
 
-
+Dotfiles for both windows and linux.
