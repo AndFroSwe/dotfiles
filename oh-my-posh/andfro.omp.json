@@ -6,7 +6,10 @@
     "lavender": "#B7BDF8",
     "blue": "#8AADF4",
     "white": "#FFFFFF",
-    "text": "#494D64"
+    "text": "#494D64",
+    "battery_charge": "#FFDFD3",
+    "battery_low": "#BB5500",
+    "battery_full": "#000000"
   },
   "transient_prompt": {
     "background": "transparent",
@@ -73,11 +76,12 @@
           "type": "battery",
           "style": "diamond",
           "leading_diamond": "",
-          "foreground": "p:white",
+          "foreground": "p:text",
           "background": "p:pink",
           "background_templates": [
-            "{{if eq \"Charging\" .State.String}} #40c4ff {{end}}",
-            "{{if eq \"Full\" .State.String}} #4caf50 {{end}}"
+            "{{if lt .Percentage 25}}p:battery_low{{end}}",
+            "{{if eq \"Charging\" .State.String}}p:battery_charge{{end}}",
+            "{{if eq \"Full\" .State.String}}p:battery_full{{end}}"
           ],
           "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} ",
           "properties": {
