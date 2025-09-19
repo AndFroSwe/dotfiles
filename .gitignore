@@ -1,1 +1,5 @@
+# Other folders to not track
+scoop
+
+# Backup files
 *.bak
