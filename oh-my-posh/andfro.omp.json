@@ -49,6 +49,14 @@
           "template": "   cmake "
         },
         {
+          "type": "go",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "foreground": "p:blue",
+          "background": "p:white",
+          "template": "  Go "
+        },
+        {
           "type": "git",
           "background": "p:lavender",
           "foreground": "p:white",
