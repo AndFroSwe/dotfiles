@@ -111,6 +111,27 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
+	-- Pane sizes
+	{
+		key = "LeftArrow",
+		mods = "CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "RightArrow",
+		mods = "CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		key = "UpArrow",
+		mods = "CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		key = "DownArrow",
+		mods = "CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+	},
 }
 
 return config
