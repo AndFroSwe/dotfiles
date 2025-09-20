@@ -34,7 +34,8 @@
             "folder_separator_icon": " / ",
             "mapped_locations": {
               "~/.config": "",
-              "~/Gitrepos": "󰊢"
+              "~/Gitrepos": "󰊢",
+              "~/API": "󰏗"
             }
           },
           "style": "diamond",
