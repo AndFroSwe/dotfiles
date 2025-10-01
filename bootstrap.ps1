@@ -34,8 +34,23 @@ $dotfiles = @(
         Source     = "$PWD\w11\Microsoft.PowerShell_profile.ps1"
         TargetDir  = Split-Path $PROFILE
         TargetFile = Split-Path $PROFILE -Leaf
+    },
+    [PSCustomObject]@{
+        Source     = "$PWD\w11\.glzr\glazewm\config.yaml"
+        TargetDir  = "$HOME\.glzr\glazewm"
+        TargetFile = "config.yaml"
     }
 )
+
+# Switch bootstrap mode
+
+$ResetMode = Read-Host "User reset mode? This will DELETE all existing config files and replace them with symlinks! [y/n]"
+
+if($ResetMode.Trim().ToLower() -eq 'y') {
+    Write-Output "`nReset mode chosen, resetting all configs..."
+  } else {
+      Write-Output "`nNormal mode chosen, will not overwrite..."
+    }
 
 # Iterate over dotfiles
 foreach ($dotfile in $dotfiles) {
@@ -53,8 +68,14 @@ foreach ($dotfile in $dotfiles) {
 
     # Check if the dotfile already exists
     if (Test-Path $targetPath) {
+      if($ResetMode.Trim().ToLower() -eq 'y') {
+          Write-Output "`nDotfile already existed at $targetPath, removing..."
+          Remove-Item $targetPath -Force
+        } else {
+
         Write-Warning "Dotfile already exists at $targetPath. Remove it manually if you want to recreate the link. Skipping..."
         continue
+          }
     }
 
     # Create symbolic link
