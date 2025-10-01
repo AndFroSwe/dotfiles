@@ -32,8 +32,8 @@ $dotfiles = @(
     },
     [PSCustomObject]@{
         Source     = "$PWD\w11\Microsoft.PowerShell_profile.ps1"
-        TargetDir  = Split-Path $PROFILE
-        TargetFile = Split-Path $PROFILE -Leaf
+        TargetDir  = "$HOME\Documents\PowerShell\"
+        TargetFile = "Microsoft.PowerShell_profile.ps1"
     },
     [PSCustomObject]@{
         Source     = "$PWD\w11\.glzr\glazewm\config.yaml"
