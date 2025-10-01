@@ -18,8 +18,5 @@ export PATH=$PATH:~/.local/bin
 # Add color to kitty
 case "$TERM" in xterm-color | *-256color | xterm-kitty) color_prompt=yes ;; esac
 
-# Git checked config
-alias config='/usr/bin/git --git-dir=$HOME/.myconf --work-tree=$HOME'
-
 # Get Better PS1
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
