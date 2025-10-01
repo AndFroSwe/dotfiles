@@ -1,9 +1,0 @@
-# Ignore all
-*
-
-# Config folder
-!.config
-!.config/wezterm
-
-# Backup files
-*.bak
