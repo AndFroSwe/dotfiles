@@ -35,7 +35,8 @@
             "mapped_locations": {
               "~/.config": "",
               "~/Gitrepos": "󰊢",
-              "~/API": "󰏗"
+              "~/API": "󰏗",
+              "~/Scratchpad": "󱓧"
             }
           },
           "style": "diamond",
