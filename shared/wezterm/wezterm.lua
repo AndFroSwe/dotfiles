@@ -5,12 +5,17 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Own config
-
 -- Fix compatibility on hyprland
 config.enable_wayland = false
 
--- Set colorscheme
+-- Set colors
 config.color_scheme = "Catppuccin Frappé (Gogh)"
+
+-- Inactive pane styling
+config.inactive_pane_hsb = {
+	saturation = 0.8,
+	brightness = 0.3,
+}
 
 -- Font settings
 config.font = wezterm.font("0xProto Nerd Font")
