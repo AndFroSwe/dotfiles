@@ -39,6 +39,11 @@ $dotfiles = @(
         Source     = "$PWD\w11\.glzr\glazewm\config.yaml"
         TargetDir  = "$HOME\.glzr\glazewm"
         TargetFile = "config.yaml"
+    },
+    [PSCustomObject]@{
+        Source     = "$PWD\shared\cava\config"
+        TargetDir  = "$HOME\.config\cava"
+        TargetFile = "config"
     }
 )
 
