@@ -11,5 +11,13 @@ to create the symlinks.
 ``` bash
 git clone https://git@github.com/andfroswe/dotfiles ~/.myconf
 cd ~/.myconf
-./bootstrap.ps1
+./bootstrap.sh
+```
+
+If running for Arch, run in terminal before opening Hyprland, otherwise a Hyprland will lose the config until reboot.
+
+Or for windows, do the same but run
+
+``` pswh
+./boostrap.ps1
 ```
