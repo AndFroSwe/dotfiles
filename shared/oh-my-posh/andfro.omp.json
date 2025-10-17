@@ -36,7 +36,8 @@
               "~/.config": "",
               "~/Gitrepos": "󰊢",
               "~/API": "󰏗",
-              "~/Scratchpad": "󱓧"
+              "~/Scratchpad": "󱓧",
+              "~/Libs": ""
             }
           },
           "style": "diamond",
