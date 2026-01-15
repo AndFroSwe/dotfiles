@@ -9,7 +9,8 @@ CONFIG_DIR="$HOME/.config"
   mkdir -p "$CONFIG_DIR"
 }
 
-# Define dotfiles:  source|targetDir|targetFile   (pipe-separated)
+# Define dotfiles:  source|targetDir|targetFile(or folder)   (pipe-separated)
+# Also works with folders. Either way, creates symlinks to files or folders
 read -r -d '' DOTFILES <<'EOF'
 shared/oh-my-posh/andfro.omp.json|.config/oh-my-posh|andfro.omp.json
 shared/wezterm/wezterm.lua|.config/wezterm|wezterm.lua
@@ -17,8 +18,13 @@ shared/spotify-player/app.toml|.config/spotify-player|app.toml
 shared/cava/config|.config/cava|config
 arch/hypr/|.config|hypr
 arch/waybar|.config|waybar
+arch/.bashrc|.|.bashrc
+arch/mako|.config|mako
+arch/wofi|.config|wofi
 EOF
 
+# Allow for a reset mode which deletes current files and replaces them with symlinks
+# Use with care
 read -r -p "User reset mode? This will DELETE all existing config files and replace them with symlinks! [y/n] " RESET_MODE
 RESET_MODE=${RESET_MODE,,}
 
