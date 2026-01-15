@@ -3,6 +3,8 @@
 Dotfiles for both windows and linux. Uses bootstrap scripts and symlinks for
 setting up the environment.
 
+![arch](./img/arch.png)
+
 ## Usage
 
 Clone repo and run boostrap script. Note that the W11 version needs admin
@@ -21,3 +23,11 @@ Or for windows, do the same but run
 ``` pswh
 ./boostrap.ps1
 ```
+
+## Features
+
+Where possible cross platform apps and services are used.
+
+On windows, does its best to get a decent tiling experience.
+
+On Arch, customizes loads of stuff (wofi, mako, hyprlock etc).
