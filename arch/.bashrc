@@ -19,4 +19,7 @@ export PATH=$PATH:~/.local/bin
 case "$TERM" in xterm-color | *-256color | xterm-kitty) color_prompt=yes ;; esac
 
 # Get Better PS1
-eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
+# only do this if a WM instance is running
+if [ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]; then
+  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
+fi
