@@ -1,0 +1,13 @@
+default-timeout=10000
+ignore-timeout=1
+background-color=#0046872F
+border-radius=10
+format=%a:<b>%s</b>\n%b
+
+[urgency=critical]
+ignore-timeout=0
+background-color=#FF00007F
+
+[body~="timetagger"]
+ignore-timeout=1
+background-color=#0046872F

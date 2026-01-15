@@ -1,0 +1,54 @@
+* {
+  /* font-family: 'Noto Sans';*/
+  font-size: 16px;
+  border: none;
+}
+ 
+#window {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid rgba(255, 255, 255, .25);
+}
+ 
+#inner-box {
+}
+ 
+#outer-box {
+  background: none;
+  margin: 10px;
+  padding: 10px;
+}
+ 
+#input {
+  box-shadow: none;
+  padding: 5px 20px;
+  background: rgba(125, 125, 125, .5);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+ 
+#input:after {
+  margin-bottom: 20px;
+}
+ 
+#input:focus {
+  box-shadow: none;
+}
+ 
+#text {
+  padding-left: 10px;
+  color: white;
+}
+ 
+#entry {
+  padding: 7px 25px;
+}
+ 
+#entry:selected {
+  outline: none;
+  border-radius: 15px;
+  background: rgba(125, 125, 125, 0.75);
+}
