@@ -23,8 +23,16 @@
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "default": "",
+      "1": "",
+      "2": "󰖟",
+      "3": "",
+      "4": "󱪝",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9":""
     }
   },
 
@@ -73,7 +81,7 @@
     "interval": 1,
     "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "ghostty -e htop"
+    "on-click": "kitty -e btop"
   },
 
   "memory": {
