@@ -12,8 +12,7 @@
   "modules-center": ["clock"],
 
   "modules-right": [
-    "custom/pomodoro",
-    "bluetooth",
+    // "bluetooth", // not availabe on razer
     "network",
     "pulseaudio", 
     "backlight",
@@ -22,13 +21,15 @@
 
   "hyprland/workspaces": {
     "format": "{name}: {icon}",
+    "active-only": false,
+    "hide-active": false,
     "format-icons": {
       "default": "",
       "1": "",
       "2": "󰖟",
       "3": "",
       "4": "󱪝",
-      "5": "",
+      "5": "",
       "6": "",
       "7": "",
       "8": "",
@@ -36,6 +37,9 @@
     }
   },
 
+  // DO NOT GIT ADD THIS CHUNK
+  // no bt on razer
+  /*
   "bluetooth": {
     "format": "󰂲",
     "format-on": "{icon}",
@@ -49,6 +53,7 @@
     "on-click": "blueman-manager",
     "tooltip-format-connected":"{device_enumerate}"
   },
+  */
 
   "custom/music": {
     "format": "  {}",
@@ -116,7 +121,7 @@
   "battery": {
         "interval":2,
         "states": {
-            // "good": 95,
+            "good": 90,
             "warning": 30,
             "critical": 15
         },
@@ -125,8 +130,8 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{icon} {time}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-good": "", // An empty format will hide the module
+        "format-full": "",
         "format-icons": ["", "", "", "", ""]
   },
   
@@ -136,6 +141,7 @@
   "format" : ""
   },
 
+  /*
   "custom/pomodoro": {
 	"format": "{}",
 	"return-type": "json",
@@ -143,6 +149,7 @@
 	"on-click": "waybar-module-pomodoro toggle",
 	"on-click-right": "waybar-module-pomodoro reset",
   },
+  */
 
 }
 
