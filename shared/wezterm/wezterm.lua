@@ -157,10 +157,10 @@ config.keys = {
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	-- if nvim is in pane, let it use
-	smart_split_nav("h", "Left"),
-	smart_split_nav("j", "Down"),
-	smart_split_nav("k", "Up"),
-	smart_split_nav("l", "Right"),
+	smart_split_nav("move", "h"),
+	smart_split_nav("move", "j"),
+	smart_split_nav("move", "k"),
+	smart_split_nav("move", "l"),
 	-- pane sizes
 	{
 		key = "LeftArrow",
