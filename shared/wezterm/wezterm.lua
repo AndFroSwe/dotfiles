@@ -39,6 +39,28 @@ end
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = true
 
+-- Vim aware pane navigation
+local function is_nvim(pane)
+	local proc = pane:get_foreground_process_name()
+	return proc ~= nil and (proc:find("nvim") ~= nil or proc:find("vim") ~= nil)
+end
+
+local function smart_split_nav(key, direction)
+	return {
+		key = key,
+		mods = "CTRL",
+		action = wezterm.action_callback(function(win, pane)
+			if is_nvim(pane) then
+				-- send key to nvim
+				win:perform_action(wezterm.action.SendKey({ key = key, mods = "CTRL" }), pane)
+			else
+				-- move wezterm pane
+				win:perform_action(wezterm.action.ActivatePaneDirection(direction), pane)
+			end
+		end),
+	}
+end
+
 -- Key binds
 -- Emulate tmux
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
@@ -96,6 +118,7 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	-- Navigate panes
+	-- Tmux like navigation. Can also navigate out of nvim
 	{
 		key = "h",
 		mods = "LEADER",
@@ -116,7 +139,12 @@ config.keys = {
 		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
-	-- Pane sizes
+	-- if nvim is in pane, let it use
+	smart_split_nav("h", "Left"),
+	smart_split_nav("j", "Down"),
+	smart_split_nav("k", "Up"),
+	smart_split_nav("l", "Right"),
+	-- pane sizes
 	{
 		key = "LeftArrow",
 		mods = "CTRL",
