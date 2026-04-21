@@ -23,3 +23,18 @@ case "$TERM" in xterm-color | *-256color | xterm-kitty) color_prompt=yes ;; esac
 if [ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]; then
   eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
 fi
+
+# Helper for inspecting asm 
+asm_pretty() {
+  llvm-cxxfilt |
+  sed "/DEBUG_/d" |
+  sed "/\.Ltmp/d" |
+  perl -pe '
+    s{(/[^ \t:]+)}{
+      my $path = $1;
+      my $r = qx(realpath \Q$path\E 2>/dev/null);
+      chomp $r;
+      $r || $path
+    }ge
+  '
+}
