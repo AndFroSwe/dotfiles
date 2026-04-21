@@ -43,9 +43,10 @@ asm_compile() {
     # defaults
     local default_compiler="clang"
     local default_opt="2"
-    local usage_string="Usage: asm_compile [-O<opt_flag>] [-c<compiler>] [-n] <filename>
+    local usage_string="Usage: asm_compile [-O<opt_flag>] [-c<compiler>] [-f<flags>] [-n] <filename>
   opt_flag:  Optimization level to use. Default: use compile_commands.json or -O$default_opt
   compiler:  Compiler to use. Default: $default_compiler
+  flags:     Misc compiler flags to add. Use at own risk. Default: 
   -n:        Dry run — print the command instead of running it"
 
     OPTIND=1 # reset getopts
@@ -54,12 +55,14 @@ asm_compile() {
     local input_compiler=""
     local input_opt_level=""
     local dry_run=false
+    local input_flags=""
 
     # parse optional flags
-    while getopts "c:O:n" opt; do
+    while getopts "c:O:f:n" opt; do
         case "$opt" in
             c) input_compiler="$OPTARG" ;;
             O) input_opt_level="$OPTARG" ;;
+            f) input_flags="$OPTARG" ;;
             n) dry_run=true ;;
             ?)
                 echo "Error: unknown flag." >&2
@@ -169,7 +172,7 @@ asm_compile() {
     # assemble new command
     local asm_flags="-S -g"
     local new_output="-o -"
-    local cmd="$compiler $asm_flags $opt_flag $includes $other_flags $new_output"
+    local cmd="$compiler $asm_flags $opt_flag $includes $other_flags $input_flags $new_output"
 
     # execute or dry run
     if [ "$dry_run" = "true" ]; then
