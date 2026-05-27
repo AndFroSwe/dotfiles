@@ -22,6 +22,16 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 -- Styling
-hl.env("GTK_THEME", "Nord")
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
+-- hl.env("XCURSOR_THEME", "rose-pine-hyprcursor")
+-- hl.env("XCURSOR_SIZE", "24")
+-- hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
+-- hl.env("HYPRCURSOR_SIZE", "24")
+
+-- Cursor
+-- Needs to be installed, guide on https://blog.nicoandres.dev/change-your-cursor-in-arch-hyprland/
+-- 1. git clone https://gitlab.com/Pummelfisch/future-cyan-hyprcursor.git ~/.config/future-cyan
+-- 2. cp ~/.config/future-cyan/Future-Cyan-Hyprcursor_Theme ~/.local/share/icons/Future-Cyan
+hl.env("XCURSOR_THEME", "Future-Cyan")
+hl.env("XCURSOR_SIZE", "36")
+hl.env("HYPRCURSOR_THEME", "Future-Cyan")
+hl.env("HYPRCURSOR_SIZE", "36")

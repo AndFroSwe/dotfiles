@@ -37,3 +37,11 @@ hl.window_rule({
 	move = "20 monitor_h-120",
 	float = true,
 })
+
+-- Window rules for clipboard
+hl.window_rule({
+	match = { initial_title = "clipse" },
+	float = true,
+	size = { 1000, 800 },
+	center = true,
+})

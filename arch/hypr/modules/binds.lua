@@ -1,14 +1,13 @@
 -- Set programs that you use
-local terminal = "wezterm"
+local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "wofi"
 
 -- Bindings
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Launch programs
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pidof wofi || wofi show --drun")) -- Only allow one instance
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/andfro/.config/waybar/scripts/launch.sh"))
@@ -18,6 +17,12 @@ local hyprshot_dir = "$HOME/Pictures/Screenshots/"
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o " .. hyprshot_dir))
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o " .. hyprshot_dir))
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o " .. hyprshot_dir))
+
+-- Clipboard
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(terminal .. " --title clipse -e clipse"))
+
+-- Lock session
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Kill hyprland
 hl.bind(

@@ -6,7 +6,7 @@ hl.config({
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+			active_border = { colors = { "rgba(a7c080ee)", "rgba(93c092ee)" }, angle = 45 },
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -20,8 +20,8 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 20,
-		rounding_power = 2,
+		rounding = 10,
+		rounding_power = 7,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 0.98,
@@ -29,9 +29,9 @@ hl.config({
 
 		shadow = {
 			enabled = true,
-			range = 20,
+			range = 15,
 			render_power = 3,
-			color = 0xee121212,
+			color = 0x4f585e00,
 		},
 
 		blur = {
@@ -70,7 +70,10 @@ hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQu
 hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
 hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear" })
+hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.25, bezier = "almostLinear" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.25, bezier = "almostLinear" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
+hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "specialWorkspaceIn", enabled = true, speed = 3, bezier = "almostLinear", style = "fade" })
+hl.animation({ leaf = "specialWorkspaceOut", enabled = true, speed = 3, bezier = "almostLinear", style = "fade" })
