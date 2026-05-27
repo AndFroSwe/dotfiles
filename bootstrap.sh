@@ -17,6 +17,7 @@ shared/wezterm/wezterm.lua|.config/wezterm|wezterm.lua
 shared/kitty/|.config|kitty
 shared/spotify-player/app.toml|.config/spotify-player|app.toml
 shared/cava/config|.config/cava|config
+shared/cava/waybar_raw.conf|.config/cava|waybar_raw.conf
 arch/hypr/|.config|hypr
 arch/waybar|.config|waybar
 arch/.bashrc|.|.bashrc
