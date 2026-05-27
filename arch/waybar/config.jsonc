@@ -1,26 +1,33 @@
 {
   "layer": "top",
-  "position": "top",
-  "margin-bottom": -10,
-  "spacing" : 0,
   "modules-left": [
-  "hyprland/workspaces",
-  "custom/uptime",
-  "cpu"
+    "custom/uptime",
+    "cpu"
   ],
-
-  "modules-center": ["clock"],
-
+  "modules-center": [
+    "clock#left",
+    "hyprland/workspaces",
+    "clock#right"
+  ],
   "modules-right": [
-    // "bluetooth", // not availabe on razer
     "network",
-    "pulseaudio", 
-    "backlight",
-    "battery",
+    "pulseaudio",
+    "cava", // Note that this requires yay -S waybar-cava-git instead of regular cava!
+    "battery"
   ],
-
+  // Module configurations
+  "battery": {
+    "format": "{capacity}% {icon} ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
   "hyprland/workspaces": {
-    "format": "{name}: {icon}",
+    "format": " {name}: {icon} ",
     "active-only": false,
     "hide-active": false,
     "format-icons": {
@@ -33,45 +40,36 @@
       "6": "",
       "7": "",
       "8": "",
-      "9":""
+      "9": "",
+      "10": ""
     }
   },
-
-  // DO NOT GIT ADD THIS CHUNK
-  // no bt on razer
-  /*
-  "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}", 
-    "format-connected":"{icon}",
-    "format-icons":{
-        "on":"󰂯",
-        "off": "󰂲",
-        "connected": "󰂱",
-        },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected":"{device_enumerate}"
-  },
-  */
-
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
-    "on-click": "playerctl play-pause",
-    "max-length": 50
-  },
-
-  "clock": {
+  "clock#left": {
     "timezone": "Europe/Stockholm",
     "tooltip": false,
-    "format": "{:%H:%M:%S  -  %A, %d}",
+    "format": " {:%H:%M:%S} ",
     "interval": 1
   },
-
+  "clock#right": {
+    "timezone": "Europe/Stockholm",
+    "tooltip": true,
+    "format": " {:%A, %d} ",
+    "interval": 1,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
+  },
   "network": {
     "format-wifi": "󰤢",
     "format-ethernet": "󰈀 ",
@@ -79,77 +77,76 @@
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
-
- },
-
+  },
   "cpu": {
     "interval": 1,
-    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "format": "   {icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
     "on-click": "kitty -e btop"
   },
-
   "memory": {
     "interval": 30,
     "format": "  {used:0.1f}G/{total:0.1f}G",
     "tooltip-format": "Memory"
   },
-
   "custom/uptime": {
-    "format": "{}",
-    "format-icon": [""], 
+    "format": " {} ",
+    "format-icon": [
+      ""
+    ],
     "tooltip": false,
     "interval": 1600,
     "exec": "$HOME/.config/waybar/scripts/uptime.sh"
   },
-  
   "backlight": {
-        "format": "{icon}  {percent}%",
-        "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
-        "tooltip": false
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "",
+      "󰃜",
+      "󰃛",
+      "󰃞",
+      "󰃝",
+      "󰃟",
+      "󰃠"
+    ],
+    "tooltip": false
   },
-  
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format-muted": "   0%",
     "format-icons": {
-      "default": ["", "", " "]
+      "default": [
+        "",
+        "",
+        " "
+      ]
     },
     "on-click": "pavucontrol"
   },
-
-  "battery": {
-        "interval":2,
-        "states": {
-            "good": 90,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {time}",
-        "format-good": "", // An empty format will hide the module
-        "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-  },
-  
-  "custom/lock": {
-  "tooltip": false,
-  "on-click": "sh -c '(sleep 0s; hyprlock)' & disown",
-  "format" : ""
-  },
-
-  /*
-  "custom/pomodoro": {
-	"format": "{}",
-	"return-type": "json",
-	"exec": "waybar-module-pomodoro --no-work-icons",
-	"on-click": "waybar-module-pomodoro toggle",
-	"on-click-right": "waybar-module-pomodoro reset",
-  },
-  */
-
+  "cava": {
+    "cava_config": "/home/andfro/.config/cava/waybar_raw.conf",
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  }
 }
-

@@ -8,7 +8,6 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-## Andfro
 # Aliases
 alias ll='ls -al'
 
@@ -18,8 +17,13 @@ export PATH=$PATH:~/.local/bin
 # Add color to kitty
 case "$TERM" in xterm-color | *-256color | xterm-kitty) color_prompt=yes ;; esac
 
+# fix python environmen9
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
 # Get Better PS1
-# only do this if a WM instance is running
+# only do this if a Hyprland instance is running
 if [ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]; then
   eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
 fi

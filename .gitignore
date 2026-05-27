@@ -1,3 +1,6 @@
 # arch device local files
 displaysettings.conf
 graphics.conf
+
+# Backup files
+*bak

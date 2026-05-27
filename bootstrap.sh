@@ -14,6 +14,7 @@ CONFIG_DIR="$HOME/.config"
 read -r -d '' DOTFILES <<'EOF'
 shared/oh-my-posh/andfro.omp.json|.config/oh-my-posh|andfro.omp.json
 shared/wezterm/wezterm.lua|.config/wezterm|wezterm.lua
+shared/kitty/|.config|kitty
 shared/spotify-player/app.toml|.config/spotify-player|app.toml
 shared/cava/config|.config/cava|config
 arch/hypr/|.config|hypr
