@@ -71,9 +71,10 @@
     }
   },
   "network": {
-    "format-wifi": "󰤢",
+    "format-wifi": "󰤢 ",
     "format-ethernet": "󰈀 ",
     "format-disconnected": "󰤠 ",
+    "format-linked": "󰴳 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
     "on-click": "nm-connection-editor"
