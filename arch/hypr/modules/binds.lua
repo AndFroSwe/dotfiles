@@ -10,7 +10,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal .. " -d=~"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pidof wofi || wofi show --drun")) -- Only allow one instance
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/andfro/.config/waybar/scripts/launch.sh"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/waybar/scripts/launch.sh")) -- Restart waybar
 
 -- Screenshots
 local hyprshot_dir = "$HOME/Pictures/Screenshots/"
