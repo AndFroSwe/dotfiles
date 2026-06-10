@@ -1,5 +1,3 @@
-# Yet another dotfiles repo
-
 Dotfiles for both windows and linux. Uses bootstrap scripts and symlinks for
 setting up the environment.
 
@@ -38,9 +36,23 @@ There are a bunch of stuff that are nice to have to get good customization. Firs
 
 ### Needed
 
+#### Hypr-stuff and integrations
+
+Hyprland has some nice modules that are needed in this configuration. Download and restart hyprland.
+
+``` bash
+yay -S hyprshot hypridle hyprlock hyprpaper clipse dolphin kitty mako wofi mako
+```
+
 #### Waybar
 
 To work with Cava plugin, we need to install a special waybar version with Cava support.
+
+Wifi is controlled via NetworkManager and visible via nm-applet. Similarly, PipeWire with WirePlumber uses pavucontrol.
+
+``` bash
+yay -S network-manager-applet pavucontrol
+```
 
 ``` bash
 yay -S waybar-cava-git
@@ -61,7 +73,7 @@ install gtk2 again if that becomes a problem. Also, if pyenv is used, remember t
 
 ``` bash
 sudo pacman -S python-setuptools python-gobject --needed
-PYENV_VERSION=system yay -S gtk2 gtk-engine-murrine sassc gnome-themes-extra everforest-gtk-theme-git ttf-rubik-vf materia-kde kvantum ---noconfirm --needed
+PYENV_VERSION=system yay -S --noconfirm --neded gtk2 gtk-engine-murrine sassc gnome-themes-extra everforest-gtk-theme-git ttf-rubik-vf materia-kde kvantum
 ```
 
 Note that the installation will take quite some time.

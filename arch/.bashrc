@@ -26,6 +26,8 @@ eval "$(pyenv init - bash)"
 # only do this if a Hyprland instance is running
 if [ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]; then
   eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
+else
+  neofetch
 fi
 
 # Helper for inspecting asm 
