@@ -17,7 +17,8 @@
   ],
   // Module configurations
   "battery": {
-    "format": "{capacity}% {icon} ",
+    "format": "{capacity}% {icon} {power}W 󱐋",
+    "invterval": 10,
     "format-icons": [
       "",
       "",
@@ -134,7 +135,7 @@
     "on-click": "pavucontrol"
   },
   "cava": {
-    "cava_config": "/home/andfro/.config/cava/waybar_raw.conf",
+    "cava_config": "$HOME/.config/cava/waybar_raw.conf",
     "input_delay": 2,
     "format-icons": [
       "▁",
