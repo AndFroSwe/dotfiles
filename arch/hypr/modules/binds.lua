@@ -6,7 +6,7 @@ local fileManager = "dolphin"
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Launch programs
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal .. " -d=~"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pidof wofi || wofi show --drun")) -- Only allow one instance
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
