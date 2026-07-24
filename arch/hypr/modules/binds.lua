@@ -1,6 +1,7 @@
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "dolphin"
+local emojiPicker = "wofi-emoji"
 
 -- Bindings
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
@@ -11,6 +12,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("pidof wofi || wofi show --drun")
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/waybar/scripts/launch.sh")) -- Restart waybar
+hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(emojiPicker))
 
 -- Screenshots
 local hyprshot_dir = "$HOME/Pictures/Screenshots/"
