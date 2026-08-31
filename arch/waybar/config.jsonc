@@ -18,7 +18,7 @@
   // Module configurations
   "battery": {
     "format": "{capacity}% {icon} {power}W 󱐋",
-    "invterval": 10,
+    "interval": 5,
     "format-icons": [
       "",
       "",
