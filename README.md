@@ -46,17 +46,11 @@ yay -S hyprshot hypridle hyprlock hyprpaper clipse dolphin kitty mako wofi mako
 
 #### Waybar
 
-To work with Cava plugin, we need to install a special waybar version with Cava support.
-
 Wifi is controlled via NetworkManager and visible via nm-applet. Similarly, PipeWire with WirePlumber uses pavucontrol.
 
 ``` bash
 yay -S network-manager-applet pavucontrol
 ```
-
-``` bash
-yay -S waybar-cava-git
-``` 
 
 ### Nice to have
 

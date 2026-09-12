@@ -2,7 +2,9 @@
   "layer": "top",
   "modules-left": [
     "custom/uptime",
-    "cpu"
+    "cpu",
+    "memory",
+    "custom/dgpu",
   ],
   "modules-center": [
     "clock#left",
@@ -12,12 +14,12 @@
   "modules-right": [
     "network",
     "pulseaudio",
-    "cava", // Note that this requires yay -S waybar-cava-git instead of regular cava!
+    "custom/power",
     "battery"
   ],
   // Module configurations
   "battery": {
-    "format": "{capacity}% {icon} {power}W 󱐋",
+    "format": " {icon} {capacity}% {time} ",
     "interval": 5,
     "format-icons": [
       "",
@@ -26,6 +28,16 @@
       "",
       ""
     ]
+  },
+  "custom/power": {
+    "format": " 󱐋 {}W ",
+    "exec": "$HOME/.config/waybar/scripts/current_power.sh",
+    "interval": 5,
+  },
+  "custom/dgpu": {
+    "format": "  {} ",
+    "exec": "cat /sys/class/drm/card0/device/power_state",
+    "interval": 5,
   },
   "hyprland/workspaces": {
     "format": " {name}: {icon} ",
@@ -38,7 +50,7 @@
       "3": "",
       "4": "󱪝",
       "5": "",
-      "6": "",
+      "6": "󰙮",
       "7": "",
       "8": "",
       "9": "",
@@ -72,32 +84,22 @@
     }
   },
   "network": {
-    "format-wifi": "󰤢 ",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "format-linked": "󰴳 ",
+    "format-wifi": " 󰤢 ",
+    "format-ethernet": " 󰈀 ",
+    "format-disconnected": " 󰌙 ",
+    "format-linked": " 󰴳 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
+    "on-click": "kitty -e nmtui"
   },
   "cpu": {
-    "interval": 1,
-    "format": "   {icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ],
-    "on-click": "kitty -e btop"
+    "interval": 5,
+    "format": "  {usage1}% ",
+    "on-click": "kitty -e btop",
   },
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "format": "  {used:0.1f}G/{total:0.1f}G ",
     "tooltip-format": "Memory"
   },
   "custom/uptime": {
@@ -123,7 +125,7 @@
     "tooltip": false
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": " {icon} {volume}% ",
     "format-muted": "   0%",
     "format-icons": {
       "default": [
@@ -134,21 +136,21 @@
     },
     "on-click": "pavucontrol"
   },
-  "cava": {
-    "cava_config": "$HOME/.config/cava/waybar_raw.conf",
-    "input_delay": 2,
-    "format-icons": [
-      "▁",
-      "▂",
-      "▃",
-      "▄",
-      "▅",
-      "▆",
-      "▇",
-      "█"
-    ],
-    "actions": {
-      "on-click-right": "mode"
-    }
-  }
+  // "cava": {
+    // "cava_config": "$HOME/.config/cava/waybar_raw.conf",
+    // "input_delay": 2,
+    // "format-icons": [
+      // "▁",
+      // "▂",
+      // "▃",
+      // "▄",
+      // "▅",
+      // "▆",
+      // "▇",
+      // "█"
+    // ],
+    // "actions": {
+      // "on-click-right": "mode"
+    // }
+  // }
 }
