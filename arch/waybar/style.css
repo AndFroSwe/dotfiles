@@ -1,4 +1,4 @@
-@import "colors/everforest-medium.css";
+@import "./colors/matugen.css";
 
 * {
   all: unset;
@@ -7,18 +7,16 @@
 
 window#waybar {
   background-color: transparent;
-  color: @fg;
   border-radius: 0 0 20px 10px;
 }
 
 .modules-left,
 .modules-right,
 .modules-center {
-  color: @fg;
   margin: 5px 12px 0px 12px;
   padding: 0 20px;
-  background-color: alpha(@bg0, 0.75);
-  border-radius: 20px;
+  background-color: alpha(@primary_container, 0.75);
+  border-radius: 10px;
 }
 
 /* Modules styling */
@@ -30,8 +28,8 @@ window#waybar {
 }
 
 #workspaces button {
-  background-color: @bg3;
-  color: @fg;
+  color: @secondary;
+  background-color: @on_secondary;
   padding: 0px 5px;
   border-radius: 99px;
   margin: 0 2px;
@@ -40,14 +38,8 @@ window#waybar {
 }
 
 #workspaces button.active {
-  background-color: @bg5;
+  background-color: @primary_container;
   transition: background-color 0.3s ease-in-out;
-}
-
-#cava {
-  margin: 0 12px;
-  font-size: 0.7rem;
-  letter-spacing: 1px;
 }
 
 #cpu {
@@ -59,7 +51,7 @@ window#waybar {
 }
 
 tooltip {
-  background-color: alpha(@bg0, 0.9);
+  background-color: alpha(@primary_container, 0.9);
   border-radius: 10px;
   padding: 5px 10px;
 }

@@ -1,0 +1,10 @@
+[config]
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '~/.config/waybar/colors/matugen.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.hyprland]
+input_path = "./templates/hyprland-colors.lua"
+output_path="~/.config/hypr/modules/colors.lua"
