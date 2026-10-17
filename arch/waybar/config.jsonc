@@ -5,6 +5,7 @@
     "cpu",
     "memory",
     "custom/dgpu",
+    "custom/power_mode",
   ],
   "modules-center": [
     "clock#left",
@@ -39,6 +40,11 @@
     "exec": "cat /sys/class/drm/card0/device/power_state",
     "interval": 5,
   },
+  "custom/power_mode": {
+    "format": "  {} ",
+    "exec": "tlpctl get",
+    "interval": 5,
+  },
   "hyprland/workspaces": {
     "format": " {name}: {icon} ",
     "active-only": false,
@@ -52,8 +58,8 @@
       "5": "",
       "6": "󰙮",
       "7": "",
-      "8": "",
-      "9": "",
+      "8": "",
+      "9": "",
       "10": ""
     }
   },
@@ -90,12 +96,12 @@
     "format-linked": " 󰴳 ",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "kitty -e nmtui"
+    "on-click": "kitty --title nmtui-float nmtui"
   },
   "cpu": {
     "interval": 5,
     "format": "  {usage1}% ",
-    "on-click": "kitty -e btop",
+    "on-click": "kitty --title btop-float btop",
   },
   "memory": {
     "interval": 30,
@@ -136,21 +142,4 @@
     },
     "on-click": "pavucontrol"
   },
-  // "cava": {
-    // "cava_config": "$HOME/.config/cava/waybar_raw.conf",
-    // "input_delay": 2,
-    // "format-icons": [
-      // "▁",
-      // "▂",
-      // "▃",
-      // "▄",
-      // "▅",
-      // "▆",
-      // "▇",
-      // "█"
-    // ],
-    // "actions": {
-      // "on-click-right": "mode"
-    // }
-  // }
 }
