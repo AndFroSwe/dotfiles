@@ -41,7 +41,7 @@ There are a bunch of stuff that are nice to have to get good customization. Firs
 Hyprland has some nice modules that are needed in this configuration. Download and restart hyprland.
 
 ``` bash
-yay -S hyprshot hypridle hyprlock hyprpaper clipse dolphin kitty mako wofi mako
+yay -S hyprshot hypridle hyprlock hyprpaper clipse dolphin kitty mako wofi
 ```
 
 #### Waybar
@@ -56,31 +56,19 @@ yay -S network-manager-applet pavucontrol
 
 #### App toolkit themes
 
-Colorthemes for apps on Hyprland are notoriously hard to get right, with GTK and Qt toolkits requiring different setup.
+The color schemes are generated using [matugen](https://github.com/InioX/matugen). To update colors from a wallpaper for examples, just run
 
-Here, I have gone for the Everforest theme. For GTK, install
-[Everforest](https://github.com/Fausto-Korpsvart/Everforest-GTK-Theme) with dependencies. Also, the Rubik font looks
-relaly nice in applications.
-
-Note that gtk2 uses some python libraries in the project. Install them to the global python distribution and try to
-install gtk2 again if that becomes a problem. Also, if pyenv is used, remember to reference that during the install.
-
-``` bash
-sudo pacman -S python-setuptools python-gobject --needed
-PYENV_VERSION=system yay -S --noconfirm --needed gtk2 gtk-engine-murrine sassc gnome-themes-extra everforest-gtk-theme-git ttf-rubik-vf materia-kde kvantum
+```bash
+matugen image /path/to/wallpaper.jpg
 ```
 
-Note that the installation will take quite some time.
+and matugen will update the corresponding color files automatically. Use qt6ct-kde for Qt colors and GTK3/4 with their normal gsettings, using among others adw-gtk-theme, breeze-icons and darkly-bin.
 
-For making settings for GTK, I have found nwg-look to be the simplest. For qt, qt6ct is deprecated so use qt6ct-kde instead.
+Remember that the GTK settings can be set with gsettings, e.g.
 
-``` bash
-yay -S nwg-look qt6ct-kde
-``` 
-
-Now, open nwg-look (GTK Settings) and select the desired theme. __Important step__ is to go to the Font tab and select _Font antialiasing_ and select _rgba_ to get proper AA for fonts. 
-
-Then, use qt6ct to set Qt themes.
+```bash
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+```
 
 #### Cursor customization
 
