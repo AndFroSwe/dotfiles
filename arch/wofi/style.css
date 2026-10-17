@@ -1,54 +1,57 @@
+@import "/home/user1/.config/wofi/colors.css";
+
 * {
   /* font-family: 'Noto Sans';*/
   font-size: 16px;
   border: none;
 }
- 
+
 #window {
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.75);
-  border: 2px solid rgba(167, 230, 124, .25);
+  background-color: alpha(@surface, 0.85);
+  border: 2px solid alpha(@primary, 0.35);
 }
- 
+
 #inner-box {
 }
- 
+
 #outer-box {
   background: none;
   margin: 10px;
   padding: 10px;
 }
- 
+
 #input {
   box-shadow: none;
   padding: 5px 20px;
-  background: rgba(125, 125, 125, .5);
+  background: alpha(@surface_container_highest, 0.85);
   border-radius: 20px;
   margin-bottom: 20px;
-  color: white;
+  color: @on_surface;
 }
- 
+
 #input:after {
   margin-bottom: 20px;
 }
- 
+
 #input:focus {
   box-shadow: none;
+  border: 1px solid alpha(@primary, 0.5);
 }
- 
+
 #text {
   padding-left: 10px;
-  color: white;
+  color: @on_surface;
 }
- 
+
 #entry {
   padding: 7px 25px;
 }
- 
+
 #entry:selected {
   outline: none;
   border-radius: 15px;
-  background: rgba(125, 125, 125, 0.75);
+  background: alpha(@primary, 0.30);
 }

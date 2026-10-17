@@ -1,1 +1,1 @@
-/home/user1/.config/hypr/modules/monitors_dock.lua
+/home/user1/.config/hypr/modules/monitors_laptop.lua

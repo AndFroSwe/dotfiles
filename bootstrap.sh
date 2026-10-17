@@ -23,6 +23,7 @@ arch/waybar|.config|waybar
 arch/.bashrc|.|.bashrc
 arch/mako|.config|mako
 arch/wofi|.config|wofi
+arch/matugen|.config|matugen
 EOF
 
 # Allow for a reset mode which deletes current files and replaces them with symlinks

@@ -25,7 +25,7 @@ eval "$(pyenv init - bash)"
 # Get Better PS1
 # only do this if a Hyprland instance is running
 if [ -n "${HYPRLAND_INSTANCE_SIGNATURE}" ]; then
-  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/andfro.omp.json)"
+  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/themes/theme.omp.json)"
 else
   neofetch
 fi
@@ -193,3 +193,16 @@ asm_compile() {
         printf '%s\n' "$cmd"
     fi
 }
+
+# Flutter 
+PATH="$PATH:~/.local/bin/flutter/bin"
+CHROME_EXECUTABLE="$HOME/.local/bin/ungoogled-chromium-flutter"
+
+# Go
+PATH="$PATH:$(go env GOPATH)/bin"
+
+# QEMU/KVM
+export LIBVIRT_DEFAULT_URI='qemu:///system'
+
+# Sudoedit
+export EDITOR=nvim
