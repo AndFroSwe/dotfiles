@@ -1,7 +1,1 @@
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-	output = "",
-	mode = "preferred",
-	position = "auto",
-	scale = "1.0",
-})
+/home/user1/.config/hypr/modules/monitors_dock.lua

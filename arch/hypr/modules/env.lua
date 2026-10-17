@@ -21,11 +21,8 @@ hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
--- Styling
--- hl.env("XCURSOR_THEME", "rose-pine-hyprcursor")
--- hl.env("XCURSOR_SIZE", "24")
--- hl.env("HYPRCURSOR_THEME", "rose-pine-hyprcursor")
--- hl.env("HYPRCURSOR_SIZE", "24")
+-- Electron
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 
 -- Cursor
 -- Needs to be installed, guide on https://blog.nicoandres.dev/change-your-cursor-in-arch-hyprland/
@@ -35,3 +32,14 @@ hl.env("XCURSOR_THEME", "Future-Cyan")
 hl.env("XCURSOR_SIZE", "36")
 hl.env("HYPRCURSOR_THEME", "Future-Cyan")
 hl.env("HYPRCURSOR_SIZE", "36")
+
+-- Nvidia
+-- These are the standard Nvidia options. However, to let the GPU go into D3Cold with optimus, these are not preferred
+-- hl.env("LIBVA_DRIVER_NAME", "nvidia")
+-- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+
+-- Set the order for which graphics devices aquamarine uses
+hl.env("AQ_DRM_DEVICES", "/dev/dri/intel-igpu:/dev/dri/nvidia-dgpu")
+
+-- Stop hyprpaper form hogging dGPU. May prevent nvidia module unloading
+hl.env("__EGL_VENDOR_LIBRARY_FILENAMES", "/usr/share/glvnd/egl_vendor.d/50_mesa.json")

@@ -21,14 +21,6 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
 -- Hyprland-run windowrule
 hl.window_rule({
 	name = "move-hyprland-run",
@@ -44,4 +36,20 @@ hl.window_rule({
 	float = true,
 	size = { 1000, 800 },
 	center = true,
+})
+
+-- Pavu control
+hl.window_rule({
+	match = { class = ".*pavucontrol.*" },
+	float = true,
+	size = { 1100, 800 },
+})
+
+-- Terminal windows
+-- To launch a terminal application as floating, set the launch commandwith title *-float, like this
+-- kitty --title nmtui-float nmtui
+hl.window_rule({
+	match = { initial_class = "kitty", initial_title = ".*-float" },
+	float = true,
+	size = { 1100, 800 },
 })

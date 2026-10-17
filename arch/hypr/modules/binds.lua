@@ -20,6 +20,9 @@ hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -o " .. hyprshot_dir))
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window -o " .. hyprshot_dir))
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("hyprshot -m region -o " .. hyprshot_dir))
 
+-- Colo picker
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprpicker -acn"))
+
 -- Clipboard
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(terminal .. " --title clipse -e clipse"))
 
@@ -32,7 +35,8 @@ hl.bind(
 	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
 )
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+-- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("~/.config/hypr/scripts/tlp-menu.sh"))
 hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Move focus
@@ -92,3 +96,16 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- Dock/Undock
+-- Dock
+hl.bind(
+	mainMod .. " + D",
+	hl.dsp.exec_cmd("ln -sf ~/.config/hypr/modules/monitors_dock.lua ~/.config/hypr/modules/monitors.lua")
+)
+
+-- Undock
+hl.bind(
+	mainMod .. " + U",
+	hl.dsp.exec_cmd("ln -sf ~/.config/hypr/modules/monitors_laptop.lua ~/.config/hypr/modules/monitors.lua")
+)
