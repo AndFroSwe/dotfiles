@@ -1,0 +1,41 @@
+[display]
+show_time = true
+greeting = "There is no spoon."
+align_greeting = "center"
+issue = false
+battery = true
+
+[background]
+kind = "matrix"
+fps = 30
+
+[background.matrix]
+min_length = 10
+max_length = 12
+min_speed = 0.1
+max_speed = 1.10
+
+[secret]
+mode = "characters"
+characters = "*"
+
+[layout.widgets]
+time_position = "top"
+
+[background.doom]
+height = 2
+spread = 1
+top_color = "#111111"
+middle_color = "#225522"
+bottom_color = "#aaaaaa"
+
+[theme]
+text = "green"
+container = "black"
+border = "green"
+title = "green"
+prompt = "green"
+input = "green"
+action = "green"
+button = "green"
+greet = "green"
