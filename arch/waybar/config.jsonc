@@ -4,8 +4,9 @@
     "custom/uptime",
     "cpu",
     "memory",
-    // "custom/dgpu",
+    "custom/dgpu",
     "custom/power_mode",
+    "custom/virsh",
   ],
   "modules-center": [
     "clock#left",
@@ -20,7 +21,9 @@
   ],
   // Module configurations
   "battery": {
-    "format": " {icon} {capacity}% {time} ",
+    "format": " {icon} {capacity}% 󰚦 {time} ",
+    "format-charging": " {icon} {capacity}%  {time} ",
+    "format-full": " {icon} {capacity}%  {time} ",
     "interval": 5,
     "format-icons": [
       "",
@@ -44,6 +47,12 @@
     "format": "  {} ",
     "exec": "tlpctl get",
     "interval": 5,
+  },
+  "custom/virsh": {
+    "format": "  {} ",
+    "exec": "virsh domstate win11",
+    "interval": 30,
+    "on-click": "$HOME/.config/waybar/scripts/on_vm_click.sh",
   },
   "hyprland/workspaces": {
     "format": " {name}: {icon} ",
