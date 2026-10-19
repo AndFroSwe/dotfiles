@@ -17,7 +17,8 @@
     "network",
     "pulseaudio",
     "custom/power",
-    "battery"
+    "battery",
+    "custom/powercontrol",
   ],
   // Module configurations
   "battery": {
@@ -40,7 +41,7 @@
   },
   "custom/dgpu": {
     "format": "  {} ",
-    "exec": "cat /sys/class/drm/card0/device/power_state",
+    "exec": "cat /sys/bus/pci/devices/0000:01:00.0/power_state",
     "interval": 5,
   },
   "custom/power_mode": {
@@ -125,6 +126,11 @@
     "tooltip": false,
     "interval": 1600,
     "exec": "$HOME/.config/waybar/scripts/uptime.sh"
+  },
+  "custom/powercontrol": {
+    "format" : " ⏻ ",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/power_menu.sh",
   },
   "backlight": {
     "format": "{icon}  {percent}%",
