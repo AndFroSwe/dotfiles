@@ -13,7 +13,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/waybar/scripts/launch.sh")) -- Restart waybar
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("pkill waybar")) -- Kill waybar for pseudo fullscreen
-hl.bind(mainMod .. " + U", hl.dsp.exec_cmd(emojiPicker))
+hl.bind(mainMod .. " + SHIFT + U", hl.dsp.exec_cmd(emojiPicker))
 
 -- Screenshots
 local hyprshot_dir = "$HOME/Pictures/Screenshots/"
